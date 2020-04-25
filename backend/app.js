@@ -15,6 +15,9 @@ app.use(bodyParser.json());
 
 app.use('/cars', carsRouter);
 app.use('/users', usersRouter)
+app.get('/',(req,res) => {
+    res.json('hello world')
+})
 
 app.use((err, req, res, next) => {
     res.status(500).json({
